@@ -67,7 +67,10 @@ class RegisterActivity : AppCompatActivity() {
             }
 
         }
+        binding.buttonLogin.setOnClickListener {
+            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
 
+        }
     }
 
     data class User(val name: String, val mobile: String, val email: String)

@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
                         //TODO navigate user on home screen
                     }
                     .addOnFailureListener {
-                        Toast.makeText(this@LoginActivity, it.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@LoginActivity, it.message, Toast.LENGTH_LONG).show()
 
                     }
 
