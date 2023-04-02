@@ -25,7 +25,13 @@ class LoginActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this@LoginActivity, "Login Successfully", Toast.LENGTH_SHORT)
                             .show()
-                        //TODO navigate user on home screen
+                        startActivity(
+                            Intent(
+                                this@LoginActivity,
+                                HomeActivity::class.java
+                            )
+                        )
+
                     }
                     .addOnFailureListener {
                         Toast.makeText(this@LoginActivity, it.message, Toast.LENGTH_LONG).show()
