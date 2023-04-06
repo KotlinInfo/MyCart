@@ -22,8 +22,7 @@ class HomeActivity : AppCompatActivity() {
 
                 for(i in it.data?.entries!!){
                   val imageUrl=i.value as String
-
-                  binding.textView.text=i.key
+                    binding.textView.text=i.key
 
                   picasso.load(imageUrl).into(binding.imageView)
 
