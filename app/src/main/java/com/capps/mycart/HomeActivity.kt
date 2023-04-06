@@ -13,6 +13,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+     //TODO CREATE SUB CATEGORY
 
         val db= Firebase.firestore
         db.collection("Shopping Icons")
