@@ -14,6 +14,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.buttonLogin.setOnClickListener {
@@ -44,21 +45,28 @@ class LoginActivity : AppCompatActivity() {
 
         binding.buttonReset.setOnClickListener {
 
-            val email = binding.etEmail.text.toString()
-            if (email.isNotEmpty()) {
-                firebaseAuth.sendPasswordResetEmail(email)
-                    .addOnSuccessListener {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            "Reset link is Sent on Email Address",
-                            Toast.LENGTH_SHORT
-                        ).show()
 
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(this@LoginActivity, it.toString(), Toast.LENGTH_LONG).show()
-                    }
-            }
+            startActivity(
+                Intent(
+                    this@LoginActivity,
+                    ForgotPasswordActivity::class.java
+                )
+            )
+//            val email = binding.etEmail.text.toString()
+//            if (email.isNotEmpty()) {
+//                firebaseAuth.sendPasswordResetEmail(email)
+//                    .addOnSuccessListener {
+//                        Toast.makeText(
+//                            this@LoginActivity,
+//                            "Reset link is Sent on Email Address",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//
+//                    }
+//                    .addOnFailureListener {
+//                        Toast.makeText(this@LoginActivity, it.toString(), Toast.LENGTH_LONG).show()
+//                    }
+//            }
 
 
         }
